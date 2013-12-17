@@ -80,5 +80,5 @@ ImgGallery::Application.configure do
 
    # required for heroku
    # set to actual heroku url
-  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+  config.action_mailer.default_url_options = { :host => 'http://pinsy.herokuapp.com/' }
 end
