@@ -1,0 +1,16 @@
+<div id="items" class="transitions-enabled">
+  <% @items.each do |item| %>
+    <div class="box panel panel-default">
+      <%= image_tag item.image.url(:medium) %>
+      <div class="panel-body">
+        <%= item.description %>
+        <%= item.user.email if item.user %>
+        <%= link_to 'Show', item_path(item) %>
+        <% if item.user == current_user %>
+          <%= link_to 'Edit', edit_item_path(item) %>
+          <%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+</div>
