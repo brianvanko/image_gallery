@@ -16,6 +16,10 @@ class ItemsController < ApplicationController
   def edit
   end
 
+  def edit_index
+    @items = Item.all
+  end
+
   def create
     @item = current_user.items.build(item_params)
 
