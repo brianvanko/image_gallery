@@ -1,11 +1,23 @@
- <%= image_tag @item.image.url %>
-
-<p>
-  <strong>Description:</strong>
-  <%= @item.description %>
-</p>
-
-<% if @item.user == current_user %>
-	<%= link_to 'Edit', edit_item_path(@item) %> |
-<% end %>
 <%= link_to 'Back', items_path %>
+
+<div class="row">
+  <div class="col-md-offset-2 col-md-8">
+    <div class="panel panel-default">
+      <div class="panel-heading center">
+        <%= image_tag @item.image.url(:medium) %>
+      </div>
+      <div class="panel-body">
+        <p><%= @item.description %></p>
+        <p><strong><%= @item.user.email if @item.user %></strong></p>
+
+        <% if @item.user == current_user %>
+         <%= link_to edit_item_path(@item) do %>
+	        <span class="glyphicon glyphicon-edit"></span>
+	        Edit
+	      <% end %>
+        <% end %>
+
+      </div>
+    </div>
+  </div>
+</div>

@@ -2,7 +2,7 @@ ImgGallery::Application.routes.draw do
   resources :items
 
   devise_for :users
-  root "pages#home"
+  root "items#index"
    get "pages/home"
    get "about" => "pages#about"
    get 'edit_index' => 'items#edit_index'
