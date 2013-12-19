@@ -5,7 +5,8 @@
     <tr>
       <th>Image</th>
       <th>Description</th>
-      <th>User</th>
+      <th>name</th>
+      <th>email</th>
       <th></th>
       <th></th>
       <th></th>
@@ -17,6 +18,7 @@
       <tr>
         <td><%= image_tag item.image.url(:medium) %></td>
         <td><%= item.description %></td>
+        <td><%= item.user.name if item.user %></td>
         <td><%= item.user.email if item.user %></td>
         <td><%= link_to 'Show', item_path(item) %></td>
         <% if item.user == current_user %>
