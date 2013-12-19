@@ -21,9 +21,10 @@
         <td><%= item.user.name if item.user %></td>
         <td><%= item.user.email if item.user %></td>
         <td><%= link_to 'Show', item_path(item) %></td>
+        <td><%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <% if item.user == current_user %>
           <td><%= link_to 'Edit', edit_item_path(item) %></td>
-          <td><%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          
         <% end %>
       </tr>
     <% end %>
